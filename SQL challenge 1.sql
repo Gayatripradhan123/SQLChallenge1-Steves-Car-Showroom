@@ -1,13 +1,13 @@
-
-create table salespersons(
-salesman_id int primary key,
-name varchar(50),
-age int, 
-city varchar(50)
+USE steel_data;
+CREATE TABLE salespersons(
+salesman_id int PRIMARY KEY,
+name VARCHAR(50),
+age INT, 
+city VARCHAR(50)
 );
-INSERT into salespersons
+INSERT INTO salespersons
 (salesman_id,name,age,city)
-values
+VALUES
 (1, 'John Smith',28, 'New York'),
 (2,'Emily Wong', 35, 'San Fran'),
 (3, 'Tom Lee', 42, 'Seattle'),
@@ -34,17 +34,17 @@ VALUES
 (7, 'Mercedes', 'C-Class', 'Coupe', 60000),
 (8, 'Nissan', 'Altima', 'Sedan', 26000);
 
-CREATE table sales(
-sale_id int primary key,
+CREATE TABLE sales(
+sale_id int PRIMARY KEY,
 car_id int, 
 salesman_id int,
 purchase_date date,
 FOREIGN KEY (car_id) REFERENCES cars(car_id),
 FOREIGN KEY (salesman_id) REFERENCES salespersons(salesman_id)
 );
-INSERT into sales
+INSERT INTO sales
 (sale_id, car_id, salesman_id, purchase_date)
-values
+VALUES
 (1,1,1, '2021-01-01'),
 (2, 3,3,'2021-02-03'),
 (3, 2, 2, '2021-02-10'),
@@ -66,7 +66,7 @@ values
 (19, 7, 1, '2023-02-10'),
 (20, 4, 4, '2023-03-01');
 
-#What are the details of all cars purchased in the year 2022?
+_What are the details of all cars purchased in the year 2022?_
 select make, type, style, cost_$,purchase_date
 from sales
 left join cars
