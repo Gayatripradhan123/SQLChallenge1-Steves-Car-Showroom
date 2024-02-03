@@ -66,7 +66,7 @@ VALUES
 (19, 7, 1, '2023-02-10'),
 (20, 4, 4, '2023-03-01');
 
-## What are the details of all cars purchased in the year 2022?
+# What are the details of all cars purchased in the year 2022?
 select make, type, style, cost_$,purchase_date
 from sales
 left join cars
